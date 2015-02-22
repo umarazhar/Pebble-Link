@@ -1,24 +1,16 @@
 package com.example.ecards;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.Socket;
 import java.util.UUID;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.getpebble.android.kit.PebbleKit;
 import com.getpebble.android.kit.PebbleKit.PebbleDataReceiver;
@@ -28,8 +20,7 @@ public class MainActivity extends Activity {
 	private static final String SERVER_IP = "104.131.17.137";
 	private static final int SERVER_PORT = 4732;
 	private static final UUID WATCHAPP_UUID = UUID.fromString("ac10f9fb-08c4-453c-b0be-825df186c6e6");
-	private static final String WATCHAPP_FILENAME = "pebble_link.pbw";
-
+	
 	private static final int
 	KEY_BUTTON = 0,
 	KEY_VIBRATE = 1,
@@ -37,6 +28,7 @@ public class MainActivity extends Activity {
 	BUTTON_SELECT = 1,
 	BUTTON_DOWN = 2;
 
+	private static final int TIMEOUT = 10000;
 	private PebbleDataReceiver appMessageReciever;
 	private Handler handler = new Handler();
 	private Socket socket;
@@ -81,6 +73,7 @@ public class MainActivity extends Activity {
 										e.printStackTrace();
 									}
 							}
+							
 						});
 					} 
 				}
@@ -92,7 +85,7 @@ public class MainActivity extends Activity {
 
 	public void sendCard() throws IOException{    	
 
-		DataHandler.writeLine(socket.getOutputStream(), "Alex, Payne, apayne@gmail.com, 519-870-9275");
+		DataHandler.writeLine(socket.getOutputStream(), "Alex, Payne, alex@gmail.com, 519-870-9275");
 
 		String input[] = null;
 		long initTime = System.currentTimeMillis();
@@ -101,7 +94,7 @@ public class MainActivity extends Activity {
 			try {
 				reply = DataHandler.readLine(socket.getInputStream());
 				delay(20);
-				if(System.currentTimeMillis() - initTime > 10000){
+				if(System.currentTimeMillis() - initTime > TIMEOUT){
 					Log.d("In connection method", "Connection timed out.");
 					break;
 				}
@@ -121,8 +114,13 @@ public class MainActivity extends Activity {
 			out.addString(1,  input[1]);
 			//Send dictionary to watch
 			PebbleKit.sendDataToPebble(getApplicationContext(), WATCHAPP_UUID, out);
-
+			
+			TextView tv = (TextView)findViewById(R.id.notification_text);
+			tv.setText(reply);
 			Log.d("Reply received.", reply);
+		}
+		else{
+			
 		}
 	}
 
@@ -143,29 +141,4 @@ public class MainActivity extends Activity {
 			appMessageReciever = null;
 		}
 	}
-	/**
-	 * Alternative sideloading method
-	 * Source: http://forums.getpebble.com/discussion/comment/103733/#Comment_103733
-	 */
-	public static void sideloadInstall(Context ctx, String assetFilename) {
-		try {
-			// Read .pbw from assets/
-			Intent intent = new Intent(Intent.ACTION_VIEW);
-			File file = new File(ctx.getExternalFilesDir(null), assetFilename);
-			InputStream is = ctx.getResources().getAssets().open(assetFilename);
-			OutputStream os = new FileOutputStream(file);
-			byte[] pbw = new byte[is.available()];
-			is.read(pbw);
-			os.write(pbw);
-			is.close();
-			os.close();
-			// Install via Pebble Android app
-			intent.setDataAndType(Uri.fromFile(file), "application/pbw");
-			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			ctx.startActivity(intent);
-		} catch (IOException e) {
-			Toast.makeText(ctx, "App install failed: " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-		}
-	}
-
 }
