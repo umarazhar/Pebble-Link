@@ -1,0 +1,2 @@
+The App UUID is ac10f9fb-08c4-453c-b0be-825df186c6e6
+The app name is pebble_link.pbk
