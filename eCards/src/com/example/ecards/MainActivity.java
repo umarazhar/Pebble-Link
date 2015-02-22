@@ -27,8 +27,8 @@ import com.getpebble.android.kit.util.PebbleDictionary;
 public class MainActivity extends Activity {
 	private static final String SERVER_IP = "104.131.17.137";
 	private static final int SERVER_PORT = 4732;
-	private static final UUID WATCHAPP_UUID = UUID.fromString("6092637b-8f58-4199-94d8-c606b1e45040");
-	private static final String WATCHAPP_FILENAME = "android-example.pbw";
+	private static final UUID WATCHAPP_UUID = UUID.fromString("ac10f9fb-08c4-453c-b0be-825df186c6e6");
+	private static final String WATCHAPP_FILENAME = "pebble_link.pbw";
 
 	private static final int
 	KEY_BUTTON = 0,
