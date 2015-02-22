@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+
+    <ImageView
+        android:id="@+id/user_image"
+        android:layout_width="@dimen/user_image_width"
+        android:layout_height="@dimen/user_image_height"
+        android:src="@drawable/default_contact_image"/>
+
+    <EditText
+        android:id="@+id/user_fname"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="First Name"
+        android:layout_toRightOf="@id/user_image" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Last Name"
+        android:layout_toRightOf="@id/user_image"
+        android:layout_below="@id/user_fname"/>
+
+    <EditText
+        android:id="@+id/user_phonenumber"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="(123) 456-7890"
+        android:layout_below="@id/user_image" />
+
+    <EditText
+        android:id="@+id/user_email"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Address"
+        android:layout_below="@id/user_phonenumber" />
+
+    <EditText
+        android:id="@+id/user_linkedin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="LinkedIn Profile"
+        android:layout_below="@id/user_email" />
+
+    <EditText
+        android:id="@+id/user_github"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="GitHub Account"
+        android:layout_below="@id/user_linkedin" />
+
+</RelativeLayout><!-- From: file:/C:/Users/Lenovo-USER/Documents/GitHub/umar.azhar5/Pebble-Link/eCards/app/src/main/res/layout/activity_edit.xml -->

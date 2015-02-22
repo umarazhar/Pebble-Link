@@ -3,7 +3,7 @@ package com.example.ecards;
 /**
  * Created by Cathy on 15-02-21.
  */
-public class eCard {
+public class User {
 
     //Identification information
     private String first_name, last_name, mid_name;
@@ -19,7 +19,7 @@ public class eCard {
     /**
      * Constructor
      */
-    public eCard() {
+    public User() {
         //create empty strings
         first_name="";
         last_name="";
@@ -31,11 +31,10 @@ public class eCard {
         other = "";
     }
 
-    public eCard(String first, String last, int phone, String address) {
+    public User(String first, String last, int phone) {
         first_name=first;
         last_name=last;
         main_phone= phone;
-        email=address;
     }
 
     /** Methods - Getters */

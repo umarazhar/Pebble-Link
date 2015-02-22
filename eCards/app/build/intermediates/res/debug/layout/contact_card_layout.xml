@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contact_card"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/contact_card_height"
+    android:paddingLeft="@dimen/contact_card_left_padding"
+    android:paddingRight="@dimen/contact_card_right_padding"
+    android:background="@drawable/contact_card_drawable">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="@dimen/contact_card_image_width"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/contact_card_image_margin_right"
+            android:src="@drawable/default_contact_image" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/contact_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="FirstName LastName" />
+
+            <TextView
+                android:id="@+id/contact_phone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="(123)456-7890" />
+
+            <TextView
+                android:id="@+id/contact_email"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Email Adress" />
+
+            <TextView
+                android:id="@+id/contact_linkedin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="LinkedIn Profile" />
+
+            <TextView
+                android:id="@+id/contact_github"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="GitHub Account" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/C:/Users/Lenovo-USER/Documents/GitHub/umar.azhar5/Pebble-Link/eCards/app/src/main/res/layout/contact_card_layout.xml -->

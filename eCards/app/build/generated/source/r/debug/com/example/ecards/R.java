@@ -720,10 +720,18 @@ containing a value of this type.
         public static final int abc_search_view_text_min_width=0x7f070010;
         public static final int activity_horizontal_margin=0x7f070011;
         public static final int activity_vertical_margin=0x7f070012;
-        public static final int dialog_fixed_height_major=0x7f070013;
-        public static final int dialog_fixed_height_minor=0x7f070014;
-        public static final int dialog_fixed_width_major=0x7f070015;
-        public static final int dialog_fixed_width_minor=0x7f070016;
+        public static final int contact_card_height=0x7f070013;
+        public static final int contact_card_image_height=0x7f070014;
+        public static final int contact_card_image_margin_right=0x7f070015;
+        public static final int contact_card_image_width=0x7f070016;
+        public static final int contact_card_left_padding=0x7f070017;
+        public static final int contact_card_right_padding=0x7f070018;
+        public static final int dialog_fixed_height_major=0x7f070019;
+        public static final int dialog_fixed_height_minor=0x7f07001a;
+        public static final int dialog_fixed_width_major=0x7f07001b;
+        public static final int dialog_fixed_width_minor=0x7f07001c;
+        public static final int user_image_height=0x7f07001d;
+        public static final int user_image_width=0x7f07001e;
     }
     public static final class drawable {
         public static final int abc_ab_bottom_solid_dark_holo=0x7f020000;
@@ -813,7 +821,10 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
+        public static final int contact_card_drawable=0x7f020057;
+        public static final int default_contact_image=0x7f020058;
+        public static final int ic_launcher=0x7f020059;
+        public static final int textfield_shapes=0x7f02005a;
     }
     public static final class id {
         public static final int action_bar=0x7f08001c;
@@ -827,12 +838,19 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f080001;
         public static final int action_menu_presenter=0x7f080002;
         public static final int action_mode_close_button=0x7f080024;
-        public static final int action_settings=0x7f08003d;
+        public static final int action_settings=0x7f08004a;
         public static final int activity_chooser_view_content=0x7f080025;
         public static final int always=0x7f080013;
         public static final int beginning=0x7f08000f;
         public static final int checkbox=0x7f08002d;
         public static final int collapseActionView=0x7f080014;
+        public static final int contact_card=0x7f080044;
+        public static final int contact_card_container=0x7f080043;
+        public static final int contact_email=0x7f080047;
+        public static final int contact_github=0x7f080049;
+        public static final int contact_linkedin=0x7f080048;
+        public static final int contact_name=0x7f080045;
+        public static final int contact_phone=0x7f080046;
         public static final int default_activity_button=0x7f080028;
         public static final int dialog=0x7f080018;
         public static final int disableHome=0x7f080009;
@@ -852,7 +870,6 @@ containing a value of this type.
         public static final int never=0x7f080016;
         public static final int none=0x7f080012;
         public static final int normal=0x7f080007;
-        public static final int notification_text=0x7f08003c;
         public static final int progress_circular=0x7f080004;
         public static final int progress_horizontal=0x7f080005;
         public static final int radio=0x7f08002f;
@@ -877,6 +894,13 @@ containing a value of this type.
         public static final int top_action_bar=0x7f080020;
         public static final int up=0x7f080021;
         public static final int useLogo=0x7f08000e;
+        public static final int user_email=0x7f080040;
+        public static final int user_fname=0x7f08003e;
+        public static final int user_github=0x7f080042;
+        public static final int user_image=0x7f08003d;
+        public static final int user_linkedin=0x7f080041;
+        public static final int user_phonenumber=0x7f08003f;
+        public static final int viewpager=0x7f08003c;
         public static final int withText=0x7f080017;
     }
     public static final class integer {
@@ -907,9 +931,11 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
         public static final int abc_simple_decor=0x7f030017;
-        public static final int activity_main=0x7f030018;
-        public static final int main=0x7f030019;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
+        public static final int activity_edit=0x7f030018;
+        public static final int activity_main=0x7f030019;
+        public static final int contact_card_layout=0x7f03001a;
+        public static final int main=0x7f03001b;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;

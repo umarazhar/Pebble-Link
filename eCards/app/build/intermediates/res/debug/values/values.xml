@@ -111,12 +111,24 @@
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="contact_card_height">100dp</dimen>
+    <dimen name="contact_card_image_height">40dp</dimen>
+    <dimen name="contact_card_image_margin_right">12dp</dimen>
+    <dimen name="contact_card_image_width">60dp</dimen>
+    <dimen name="contact_card_left_padding">36dp</dimen>
+    <dimen name="contact_card_right_padding">48dp</dimen>
     <!-- From: file:/C:/Users/Lenovo-USER/Documents/GitHub/umar.azhar5/Pebble-Link/eCards/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment/>
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
     <item name="dialog_fixed_height_minor" type="dimen">100%</item>
     <item name="dialog_fixed_width_major" type="dimen">320dp</item>
     <item name="dialog_fixed_width_minor" type="dimen">320dp</item>
+    <!-- From: file:/C:/Users/Lenovo-USER/Documents/GitHub/umar.azhar5/Pebble-Link/eCards/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="user_image_height">100dp</dimen>
+    <dimen name="user_image_width">100dp</dimen>
+    <!-- From: file:/C:/Users/Lenovo-USER/Documents/GitHub/umar.azhar5/Pebble-Link/eCards/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <eat-comment/>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
