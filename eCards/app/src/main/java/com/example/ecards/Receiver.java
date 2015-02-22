@@ -35,6 +35,7 @@ public class Receiver extends PebbleKit.PebbleDataReceiver {
 
     public void receiveData(final Context context, int transactionId, PebbleDictionary data) {
         Log.d("On Resume", "I am inside received data method");
+        handler = new Handler();
         //Acknowledge the Pebble message
         PebbleKit.sendAckToPebble(context, transactionId);
         //Checks if button was pressed on watch
@@ -43,12 +44,15 @@ public class Receiver extends PebbleKit.PebbleDataReceiver {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    if (button == BUTTON_SELECT)
+                    Log.i("Receive Data", "Handler run code");
+                    if (button == BUTTON_SELECT) {
                         try {
                             sendCard(context);
+                            Log.i("Receive Data", "Send card succeeded!");
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+                    }
                 }
 
             });
@@ -56,6 +60,8 @@ public class Receiver extends PebbleKit.PebbleDataReceiver {
     }
 
     public void sendCard(Context context) throws IOException{
+
+        Log.i("Send Card", "In Send card!");
 
         DataHandler.writeLine(MainActivity.socket.getOutputStream(), "Umar, Azhar, uazhar@gmail.com, 519-870-9275");
 

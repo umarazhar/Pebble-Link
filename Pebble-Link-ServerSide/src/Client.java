@@ -34,6 +34,7 @@ public class Client extends Thread implements Comparable{
 	
 	public void sendData(String data) throws IOException {
 		DataHandler.writeLine(socket.getOutputStream(), data);
+		socket.getOutputStream().flush();
 	}
 	
 	public String getSendData() {

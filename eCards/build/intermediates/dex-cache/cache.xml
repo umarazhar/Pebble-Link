@@ -23,18 +23,18 @@
         <dex dex="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\pre-dexed\debug\classes-de4e211055fb2d0b2d17808719146ff96a5cab9d.jar" />
     </item>
     <item
-        jar="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
-        <dex dex="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\pre-dexed\debug\classes-578045fed796d6e534f5ff928008521c0b01752c.jar" />
-    </item>
-    <item
         jar="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
         <dex dex="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-af7650b9b2019e02bbde2378b1665c300f3d4a2b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
+        <dex dex="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\pre-dexed\debug\classes-578045fed796d6e534f5ff928008521c0b01752c.jar" />
     </item>
 
 </items>

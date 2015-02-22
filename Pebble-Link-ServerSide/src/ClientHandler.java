@@ -23,13 +23,17 @@ public class ClientHandler extends Thread {
 			if (commQueue.contains(clients.get(i)))
 				continue;
 			if (clients.get(i).readyToSend()) {
+				System.out.println("Adding client to queue...");
 				commQueue.add(clients.get(i));
 			}
 		}
 	}
 	
 	public void transferData() {
+		System.out.println("Size before removing first client from Queue: " + commQueue.size());
 		Client client1 = commQueue.remove();
+		
+		System.out.println("Size after removing first client from Queue: " + commQueue.size());
 		
 		Client client2 = null;
 		
@@ -37,10 +41,13 @@ public class ClientHandler extends Thread {
 			client2 = commQueue.poll();
 		}
 		
+		System.out.println("Size after removing second client from Queue: " + commQueue.size());
+		
 		while (true) {
 			try {
-				System.out.println("Trying to send client 1 data");
+				System.out.println("Client 1 before getSendData() readyToSend(): " + client1.readyToSend());;
 				client2.sendData(client1.getSendData());
+				System.out.println("Client 1 after getSendData() readyToSend(): " + client1.readyToSend());
 				break;
 			} catch (IOException e) {
 				
@@ -53,8 +60,9 @@ public class ClientHandler extends Thread {
 		
 		while (true) {
 			try {
-				System.out.println("Trying to send client 2 data");
+				System.out.println("Client 2 before getSendData() readyToSend(): " + client1.readyToSend());
 				client1.sendData(client2.getSendData());
+				System.out.println("Client 2 after getSendData() readyToSend(): " + client1.readyToSend());
 				break;
 			} catch (IOException e) {
 				
