@@ -1,0 +1,6 @@
+C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\classes\debug
+C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-d1af41b090795af4329ce58891bb05d70e93fd0f.jar
+C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\pre-dexed\debug\classes-de4e211055fb2d0b2d17808719146ff96a5cab9d.jar
+C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-af7650b9b2019e02bbde2378b1665c300f3d4a2b.jar
+C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\pre-dexed\debug\classes-0961916c08f690167c67c7b872109d21c11e3818.jar
+C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\pre-dexed\debug\classes-578045fed796d6e534f5ff928008521c0b01752c.jar

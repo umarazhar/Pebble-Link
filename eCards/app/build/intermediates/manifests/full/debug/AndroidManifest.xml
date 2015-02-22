@@ -10,6 +10,12 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <receiver android:name="com.example.ecards.Receiver" >
+        <intent-filter>
+            <action android:name="com.getpebble.action.app.RECEIVE" />
+        </intent-filter>
+    </receiver>
+
     <android:uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />

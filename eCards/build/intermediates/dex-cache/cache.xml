@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Android\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
+        <dex dex="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-d1af41b090795af4329ce58891bb05d70e93fd0f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef">
+        <dex dex="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\pre-dexed\debug\classes-0961916c08f690167c67c7b872109d21c11e3818.jar" />
+    </item>
+    <item
+        jar="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\exploded-aar\com.getpebble\pebblekit\2.6.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="660dc1d342b8e31da1cc51e79c66d636a77a1e98">
+        <dex dex="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\pre-dexed\debug\classes-de4e211055fb2d0b2d17808719146ff96a5cab9d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
+        <dex dex="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\pre-dexed\debug\classes-578045fed796d6e534f5ff928008521c0b01752c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
+        <dex dex="C:\Users\Lenovo-USER\Documents\GitHub\umar.azhar5\Pebble-Link\eCards\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-af7650b9b2019e02bbde2378b1665c300f3d4a2b.jar" />
+    </item>
+
+</items>
