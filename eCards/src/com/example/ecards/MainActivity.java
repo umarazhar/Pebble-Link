@@ -28,6 +28,7 @@ public class MainActivity extends Activity {
 	BUTTON_SELECT = 1,
 	BUTTON_DOWN = 2;
 
+	private static final int CONTACT_STRING = 2;
 	private static final int TIMEOUT = 10000;
 	private PebbleDataReceiver appMessageReciever;
 	private Handler handler = new Handler();
@@ -37,7 +38,6 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		//sideloadInstall(getApplicationContext(), WATCHAPP_FILENAME);
 
 		Log.d("On Create Method", "Before Strict mode");
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -109,9 +109,9 @@ public class MainActivity extends Activity {
 			//Creating dictionary to send data to watch
 			PebbleDictionary out = new PebbleDictionary();
 			//Adding first name to pebble watch output
-			out.addString(0, input[0]);
+			out.addString(CONTACT_STRING, input[0]);
 			//Adding last name to pebble watch output
-			out.addString(1,  input[1]);
+			//out.addString(CONTACT_STRING,  input[1]);
 			//Send dictionary to watch
 			PebbleKit.sendDataToPebble(getApplicationContext(), WATCHAPP_UUID, out);
 			
