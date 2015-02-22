@@ -3,7 +3,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 
-public class Client extends Thread{
+public class Client extends Thread implements Comparable{
 	
 	private Socket socket;
 	private ArrayList<Client> clients;
@@ -59,6 +59,15 @@ public class Client extends Thread{
 				e.printStackTrace();
 			}
 		}
+	}
+
+	@Override
+	public int compareTo(Object arg0) {
+		Client tmp = (Client)arg0;
+		if (tmp == this)
+			return 0;
+		
+		return -1;
 	}
 
 }

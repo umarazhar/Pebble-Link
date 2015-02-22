@@ -19,9 +19,11 @@ public class ClientHandler extends Thread {
 	}
 	
 	public void checkData() {
-		for (Client client : clients) {
-			if (client.readyToSend()) {
-				commQueue.add(client);
+		for (int i = 0; i < clients.size(); i++) {
+			if (commQueue.contains(clients.get(i)))
+				continue;
+			if (clients.get(i).readyToSend()) {
+				commQueue.add(clients.get(i));
 			}
 		}
 	}
@@ -37,17 +39,21 @@ public class ClientHandler extends Thread {
 		
 		while (true) {
 			try {
+				System.out.println("Trying to send client 1 data");
 				client2.sendData(client1.getSendData());
 				break;
 			} catch (IOException e) {
 				
 			}
 		}
-			
+		
+		System.out.println("Client 2 data sent!");
+		
 		delay(20);
 		
 		while (true) {
 			try {
+				System.out.println("Trying to send client 2 data");
 				client1.sendData(client2.getSendData());
 				break;
 			} catch (IOException e) {
@@ -60,6 +66,7 @@ public class ClientHandler extends Thread {
 	
 	public void addClient(Socket socket) {
 		Client newClient = new Client(socket, clients);
+		newClient.start();
 		clients.add(newClient);
 		System.out.println("Client added to handler!");
 	}
@@ -68,9 +75,8 @@ public class ClientHandler extends Thread {
 		
 		while (running) {
 //			System.out.println(clients.size());
-			
 			checkData();
-			if (!commQueue.isEmpty()) {
+			if (commQueue.size() > 1) {
 				System.out.println("Starting data transfer!");
 				transferData();
 			}
