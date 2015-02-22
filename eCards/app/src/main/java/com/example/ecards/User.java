@@ -9,11 +9,11 @@ public class User {
     private String first_name, last_name, mid_name;
 
     //Contact information
-    private int main_phone, alt_phone;
+    private String main_phone, alt_phone;
     private String email, alt_email;
 
     //Links
-    private String linkedin, website, other;
+    private String linkedin, website, other, github;
 
 
     /**
@@ -27,14 +27,23 @@ public class User {
         email="";
         alt_email="";
         linkedin="";
+        github = "";
         website= "";
         other = "";
     }
 
-    public User(String first, String last, int phone) {
+    public User(String first, String last, String phone) {
+
         first_name=first;
         last_name=last;
         main_phone= phone;
+        mid_name="";
+        email="";
+        alt_email="";
+        linkedin="";
+        github = "";
+        website= "";
+        other = "";
     }
 
     /** Methods - Getters */
@@ -50,11 +59,11 @@ public class User {
         return mid_name;
     }
 
-    public int getMainPhone() {
+    public String getMainPhone() {
         return main_phone;
     }
 
-    public int getAltPhone() {
+    public String getAltPhone() {
         return alt_phone;
     }
 
@@ -68,6 +77,10 @@ public class User {
 
     public String getLinkedin() {
         return linkedin;
+    }
+
+    public String getGithub() {
+        return github;
     }
 
     public String getWebsite() {
@@ -91,11 +104,11 @@ public class User {
         mid_name=m;
     }
 
-    public void setMainPhone(int mp) {
+    public void setMainPhone(String mp) {
         main_phone=mp;
     }
 
-    public void setAltPhone(int ap) {
+    public void setAltPhone(String ap) {
         alt_phone = ap;
     }
 
@@ -113,6 +126,10 @@ public class User {
 
     public void setWebsite(String web) {
         website=web;
+    }
+
+    public void setGithub(String github) {
+        this.github = github;
     }
 
     public void setOther(String o) {

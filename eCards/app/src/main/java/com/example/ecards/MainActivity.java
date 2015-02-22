@@ -1,28 +1,28 @@
 package com.example.ecards;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+import android.support.v4.view.PagerAdapter;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.getpebble.android.kit.PebbleKit;
 import com.getpebble.android.kit.PebbleKit.PebbleDataReceiver;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.util.List;
 import java.util.UUID;
-import java.util.Vector;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends Activity {
 	private static final String SERVER_IP = "104.131.17.137";
 	private static final int SERVER_PORT = 4732;
 	private static final UUID WATCHAPP_UUID = UUID.fromString("ac10f9fb-08c4-453c-b0be-825df186c6e6");
@@ -39,6 +39,8 @@ public class MainActivity extends FragmentActivity {
 	private Handler handler = new Handler();
 	public static Socket socket;
 
+    public static User user;
+
     private PagerAdapter mPagerAdapter;
 
 	@Override
@@ -51,27 +53,89 @@ public class MainActivity extends FragmentActivity {
         LayoutInflater li = this.getLayoutInflater();
         RelativeLayout rl = (RelativeLayout)li.inflate(R.layout.activity_main, null);
         LinearLayout linearLayout = (LinearLayout)rl.findViewById(R.id.contact_card_container);
-        LinearLayout contactCard = (LinearLayout)li.inflate(R.layout.contact_card_layout, null);
-        LinearLayout contactCard2 = (LinearLayout)li.inflate(R.layout.contact_card_layout, null);
-        LinearLayout contactCard3 = (LinearLayout)li.inflate(R.layout.contact_card_layout, null);
-        LinearLayout contactCard4 = (LinearLayout)li.inflate(R.layout.contact_card_layout, null);
-        LinearLayout contactCard5 = (LinearLayout)li.inflate(R.layout.contact_card_layout, null);
-        LinearLayout contactCard6 = (LinearLayout)li.inflate(R.layout.contact_card_layout, null);
-        LinearLayout contactCard7 = (LinearLayout)li.inflate(R.layout.contact_card_layout, null);
-        LinearLayout contactCard8 = (LinearLayout)li.inflate(R.layout.contact_card_layout, null);
 
-        linearLayout.addView(contactCard);
-        linearLayout.addView(contactCard2);
-        linearLayout.addView(contactCard3);
-        linearLayout.addView(contactCard4);
-        linearLayout.addView(contactCard5);
-        linearLayout.addView(contactCard6);
-        linearLayout.addView(contactCard7);
-        linearLayout.addView(contactCard8);
+//        loadUserData();
+
+        try {
+            FileInputStream fin = openFileInput("contacts.txt");
+            Log.i("Read File", "Opened file for reading");
+            int c;
+            while ((c = fin.read()) != -1) {
+                String temp = "";
+                while (c != '\n' && c != -1) {
+                    Log.i("Reading Characters", "Character: " + Character.toString((char)c));
+                    temp += Character.toString((char) c);
+                    c = fin.read();
+                }
+                String input[] = temp.split(",");
+
+                LinearLayout contactCard = (LinearLayout) li.inflate(R.layout.contact_card_layout, null);
+
+                Log.i("Read File", "Reading user data from file");
+
+                TextView name = (TextView) contactCard.findViewById(R.id.contact_name);
+                name.setText(input[0] + " " + input[1]);
+                TextView email = (TextView) contactCard.findViewById(R.id.contact_email);
+                email.setText(input[2]);
+                TextView phone = (TextView) contactCard.findViewById(R.id.contact_phone);
+                phone.setText(input[3]);
+                TextView linkedIn = (TextView) contactCard.findViewById(R.id.contact_linkedin);
+                linkedIn.setText(input[4]);
+                TextView gitHub = (TextView) contactCard.findViewById(R.id.contact_github);
+                gitHub.setText(input[5]);
+                linearLayout.addView(contactCard);
+            }
+
+            Log.i("Read File", "Finished reading file");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+//        LinearLayout card1 = (LinearLayout)li.inflate(R.layout.contact_card_layout, null);
+//        LinearLayout card2 = (LinearLayout)li.inflate(R.layout.contact_card_layout, null);
+//        LinearLayout card3 = (LinearLayout)li.inflate(R.layout.contact_card_layout, null);
+
+
+//        TextView name = (TextView) card1.findViewById(R.id.contact_name);
+//        name.setText("Cathy Lei");
+//        TextView email = (TextView) card1.findViewById(R.id.contact_email);
+//        email.setText("cathy@gmail.com");
+//        TextView phone = (TextView) card1.findViewById(R.id.contact_phone);
+//        phone.setText("3122345444");
+//        TextView linkedIn = (TextView) card1.findViewById(R.id.contact_linkedin);
+//        linkedIn.setText("www.linkedin.com/in/cathy");
+//        TextView gitHub = (TextView) card1.findViewById(R.id.contact_github);
+//        gitHub.setText("github.com/cathy");
+//
+//        TextView name1 = (TextView) card2.findViewById(R.id.contact_name);
+//        name1.setText("Albert Tai");
+//        TextView email1 = (TextView) card2.findViewById(R.id.contact_email);
+//        email1.setText("ttai3@gmail.com");
+//        TextView phone1 = (TextView) card2.findViewById(R.id.contact_phone);
+//        phone1.setText("2262395218");
+//        TextView linkedIn1 = (TextView) card2.findViewById(R.id.contact_linkedin);
+//        linkedIn1.setText("www.linkedin.com/in/albert");
+//        TextView gitHub1 = (TextView) card2.findViewById(R.id.contact_github);
+//        gitHub1.setText("github.com/albert");
+//
+//        TextView name2 = (TextView) card3.findViewById(R.id.contact_name);
+//        name2.setText("Umar Azhar");
+//        TextView email2 = (TextView) card3.findViewById(R.id.contact_email);
+//        email2.setText("uazhar@gmail.com");
+//        TextView phone2 = (TextView) card3.findViewById(R.id.contact_phone);
+//        phone2.setText("5198704662");
+//        TextView linkedIn2 = (TextView) card3.findViewById(R.id.contact_linkedin);
+//        linkedIn2.setText("www.linkedin.com/in/umar");
+//        TextView gitHub2 = (TextView) card3.findViewById(R.id.contact_github);
+//        gitHub2.setText("github.com/umar");
+//
+//        linearLayout.addView(card1);
+//        linearLayout.addView(card2);
+//        linearLayout.addView(card3);
+
 
         setContentView(rl);
 
-        initialisePaging();
 
         PebbleKit.registerReceivedDataHandler(this, new Receiver());
 
@@ -86,14 +150,48 @@ public class MainActivity extends FragmentActivity {
 //		Log.d("On Create Method", "This is working");
 	}
 
-    private void initialisePaging() {
+    private void loadUserData() {
+        try {
+            FileInputStream fin = openFileInput("user.txt");
+            int c;
+            String tmp = "";
+            while ((c = fin.read()) != -1) {
+                tmp += Character.toString((char)c);
+            }
 
-        List<Fragment> fragments = new Vector<Fragment>();
-        fragments.add(Fragment.instantiate(this, EditContactActivity.class.getName()));
-        this.mPagerAdapter  = new PagerAdapter(super.getSupportFragmentManager(), fragments);
-        //
-        ViewPager pager = (ViewPager)super.findViewById(R.id.viewpager);
-        pager.setAdapter(this.mPagerAdapter);
+            String[] input = tmp.split(",");
+
+            user.setFirstName(input[0]);
+            user.setLastName(input[1]);
+            user.setEmail(input[2]);
+            user.setMainPhone(input[3]);
+            user.setLinkedin(input[4]);
+            user.setGithub(input[5]);
+        } catch (IOException e) {
+
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        } else if (id == R.id.action_next) {
+            Intent intent = new Intent(this, EditContactActivity.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 	@Override
@@ -185,27 +283,12 @@ public class MainActivity extends FragmentActivity {
 //			appMessageReciever = null;
 //		}
 	}
-}
 
-class PagerAdapter extends FragmentPagerAdapter {
-
-    private List<Fragment> fragments;
-
-    public PagerAdapter(FragmentManager fm, List<Fragment> fragments) {
-        super(fm);
-        this.fragments = fragments;
-    }
-
-    @Override
-    public Fragment getItem(int position) {
-        return this.fragments.get(position);
-    }
-
-    /* (non-Javadoc)
-     * @see android.support.v4.view.PagerAdapter#getCount()
-     */
-    @Override
-    public int getCount() {
-        return this.fragments.size();
+    protected void onDestroy() {
+        super.onDestroy();
+        if(appMessageReciever != null) {
+			unregisterReceiver(appMessageReciever);
+			appMessageReciever = null;
+		}
     }
 }

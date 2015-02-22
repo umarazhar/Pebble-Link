@@ -69,6 +69,18 @@ category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:30:17
 	android:name
 		ADDED from AndroidManifest.xml:30:27
+activity#com.example.ecards.EditContactActivity
+ADDED from AndroidManifest.xml:33:9
+	android:parentActivityName
+		ADDED from AndroidManifest.xml:35:13
+	android:name
+		ADDED from AndroidManifest.xml:34:13
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from AndroidManifest.xml:36:13
+	android:value
+		ADDED from AndroidManifest.xml:38:17
+	android:name
+		ADDED from AndroidManifest.xml:37:17
 android:uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 IMPLIED from AndroidManifest.xml:2:1 reason: com.getpebble.android.kit has a targetSdkVersion < 4
 android:uses-permission#android.permission.READ_PHONE_STATE

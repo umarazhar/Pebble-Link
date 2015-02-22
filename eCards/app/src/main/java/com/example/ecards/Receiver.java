@@ -7,6 +7,7 @@ import android.util.Log;
 import com.getpebble.android.kit.PebbleKit;
 import com.getpebble.android.kit.util.PebbleDictionary;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -63,7 +64,9 @@ public class Receiver extends PebbleKit.PebbleDataReceiver {
 
         Log.i("Send Card", "In Send card!");
 
-        DataHandler.writeLine(MainActivity.socket.getOutputStream(), "Umar, Azhar, uazhar@gmail.com, 519-870-9275");
+//        DataHandler.writeLine(MainActivity.socket.getOutputStream(), "Umar, Azhar, uazhar@gmail.com, 519-870-9275");
+        String tmp = "" + MainActivity.user.getFirstName() + "," + MainActivity.user.getLastName() + "," + MainActivity.user.getMainPhone() + "," + MainActivity.user.getLinkedin() + "," + MainActivity.user.getGithub();
+        DataHandler.writeLine(MainActivity.socket.getOutputStream(), tmp);
 
         String input[] = null;
         long initTime = System.currentTimeMillis();
@@ -92,6 +95,11 @@ public class Receiver extends PebbleKit.PebbleDataReceiver {
 //            out.addString(1,  input[1]);
             //Send dictionary to watch
             PebbleKit.sendDataToPebble(context, WATCHAPP_UUID, out);
+
+            String FILENAME = "contacts.txt";
+            FileOutputStream fos = context.openFileOutput(FILENAME, Context.MODE_APPEND);
+            fos.write(reply.getBytes());
+            fos.close();
 
 //            TextView tv = (TextView)findViewById(R.id.notification_text);
 //            tv.setText(reply);

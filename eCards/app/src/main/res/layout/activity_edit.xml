@@ -14,7 +14,8 @@
         android:id="@+id/user_image"
         android:layout_width="@dimen/user_image_width"
         android:layout_height="@dimen/user_image_height"
-        android:src="@drawable/default_contact_image"/>
+        android:src="@drawable/default_contact_image"
+        android:onClick="chooseImage" />
 
     <EditText
         android:id="@+id/user_fname"
@@ -24,6 +25,7 @@
         android:layout_toRightOf="@id/user_image" />
 
     <EditText
+        android:id="@+id/user_lname"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="Last Name"
@@ -57,5 +59,11 @@
         android:layout_height="wrap_content"
         android:hint="GitHub Account"
         android:layout_below="@id/user_linkedin" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:onClick="save" />
 
 </RelativeLayout>
